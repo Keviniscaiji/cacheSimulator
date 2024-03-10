@@ -1,0 +1,44 @@
+table {
+    width: 80%; 
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+input[type="number"], input[type="checkbox"], input[type="text"] {
+    width: 90%;
+    padding: 8px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="number"] {
+    width: 50px;
+}
+
+input#operation {
+    width: 50px;
+}
+input#address {
+    width: 95%;
+}
+
+tr:hover {background-color: #f2f2f2;}

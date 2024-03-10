@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/styles.css">
+    <title>C++ Integration</title>
+</head>
+
+<body>
+    <h2>Cache Configuration Form</h2>
+    <table class="center-table">
+        <tr>
+            <td>Block size for L1 and L2:</td>
+            <td><input type="number" id="blockSize" maxlength="1" min="5" max="7" value=5 "form-control" required></td>
+
+            <td>Set size for L1 and L2:</td>
+            <td><input type="number" id="setSize" maxlength="1" value=3 class="form-control" required></td>
+
+            <td>Cache size for L1 :</td>
+            <td><input type="number" id="cacheSizeL1" maxlength="2" value=12 class="form-control" required></td>
+
+            <td>Cache size for L2 :</td>
+            <td><input type="number" id="cacheSizeL2" maxlength="2" value=15 class="form-control" required></td>
+
+            <td>Disable prefetcher?:</td>
+            <td><input type="checkbox" id="disablePrefetcher" class="form-control"></td>
+
+            <td>Use L2 cache?:</td>
+            <td><input type="checkbox" id="useL2Cache" class="form-control"></td>
+
+            <td><button id="parameterButton" onclick="submitForm1()">Submit</button></td>
+        </tr>
+        <tr>
+            <td colspan="2">Operation (W for write, R for read):</td>
+            <td><input type="text" id="operation" class="form-control" maxlength="1" disabled=true></td>
+
+            <td>Address:</td>
+            <td colspan="7"><input type="text" id="address" class="form-control" disabled=true required></td>
+            <td colspan="1"><button id="sendSimButton" onclick="submitForm2()" disabled=true>Submit</button></td>
+            <td colspan="1"><button id="sendStopButton" onclick="stopSimulation()" disabled=true>Stop</button></td>
+        </tr>
+    </table>
+    <h4>
+    Sample Input:<br>
+    5,3,12,15,false,true <br>
+    R 0x000055c90d697f90 <br>
+    W 0x000055c90d697f90 <br>
+    </h4>
+    <h2>Output</h2>
+    <div id="output" class="output">
+        <p>Output will be displayed here</p>
+    </div>
+    <script type="text/javascript" src="./main.js"></script>
+
+</body>
+
+</html>
