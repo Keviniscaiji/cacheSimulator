@@ -39,8 +39,7 @@ This command runs the simulator and maps ports `80` and `8080` from the containe
 
 After successfully launching the simulator, you can access it through your web browser:
 
-- For direct/npm installations, navigate to `http://localhost:8080`.
-- For Docker-based installations, access it via `http://localhost` or `http://localhost:8080`, depending on how the application is configured to serve content.
+- Navigate to `http://localhost`.
 
 ## Features
 
