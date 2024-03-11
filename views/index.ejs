@@ -7,8 +7,11 @@
 </head>
 
 <body>
-    <h2>Cache Configuration Form</h2>
+    
     <table class="center-table">
+        <tr>
+            <td colspan = 15 ><h2 class="tableTitle">Cache Simulator</h2></td>
+        </tr>
         <tr>
             <td>Block size for L1 and L2:</td>
             <td><input type="number" id="blockSize" maxlength="1" min="5" max="7" value=5 "form-control" required></td>
@@ -25,6 +28,9 @@
             <td>Disable prefetcher?:</td>
             <td><input type="checkbox" id="disablePrefetcher" class="form-control"></td>
 
+            <td>Use Stride prefetcher?:</td>
+            <td><input type="checkbox" id="useL2Cache" class="form-control"></td>
+
             <td>Use L2 cache?:</td>
             <td><input type="checkbox" id="useL2Cache" class="form-control"></td>
 
@@ -35,22 +41,33 @@
             <td><input type="text" id="operation" class="form-control" maxlength="1" disabled=true></td>
 
             <td>Address:</td>
-            <td colspan="7"><input type="text" id="address" class="form-control" disabled=true required></td>
+            <td colspan="9"><input type="text" id="address" class="form-control" disabled=true required></td>
             <td colspan="1"><button id="sendSimButton" onclick="submitForm2()" disabled=true>Submit</button></td>
             <td colspan="1"><button id="sendStopButton" onclick="stopSimulation()" disabled=true>Stop</button></td>
         </tr>
+        <tr><td colspan="15">
+            <h4>
+                Sample Input:<br>
+                5,3,12,15,false,true <br>
+                R 0x000055c90d697f90 <br>
+                W 0x000055c90d697f90 <br>
+            </h4>
+        </td>
+        </tr>
+        <tr>
+            <td colspan="15">
+            <h2>Output</h2>
+            <div id="output" class="output">
+                <p>Output will be displayed here</p>
+            </div>
+        </td>
+        </tr>
     </table>
-    <h4>
-    Sample Input:<br>
-    5,3,12,15,false,true <br>
-    R 0x000055c90d697f90 <br>
-    W 0x000055c90d697f90 <br>
-    </h4>
-    <h2>Output</h2>
-    <div id="output" class="output">
-        <p>Output will be displayed here</p>
-    </div>
+    <!-- BEGIN: ed8c6549bwf9 -->
+        &copy; Kevin
+    <!-- END: ed8c6549bwf9 -->
     <script type="text/javascript" src="./main.js"></script>
+
 
 </body>
 

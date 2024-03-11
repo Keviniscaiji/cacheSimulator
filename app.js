@@ -7,7 +7,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.use(express.json());
-const port = 3000;
+const port = 80;
 
 
 
@@ -23,7 +23,7 @@ function initCacheSimulatorProcess() {
         cacheSimulatorProcess = spawn('./cacheSimulator/testCacheSim');
         
         cacheSimulatorProcess.stdout.on('data', (data) => {
-            // console.log(`C++ program output: ${data.toString()}`);
+            console.log(`C++ program output: ${data.toString()}`);
             output = data.toString();
         });
         
@@ -70,6 +70,6 @@ app.post('/process', (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server listening at http://localhost:${port}`);
+app.listen(port,'0.0.0.0', () => {
+    console.log(`Server listening at http://0.0.0.0:${port}`);
 });

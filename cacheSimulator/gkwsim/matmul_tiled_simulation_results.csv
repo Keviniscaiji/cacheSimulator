@@ -1,2 +1,0 @@
-C_L1,B_L1,S_L1,C_L2,S_L2,Prefetcher,Stride,Tag Storage L1 (bits),Tag Storage L2 (bits),ATT L1
-12,3,3,15,3,True,True,29184,217088,7.17825

@@ -1,4 +1,5 @@
 #include "cachesim.hpp"
+#include "cachesim.cpp"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -6,11 +7,9 @@
 #include <cstdint>
 #include <cmath>
 #include <sstream>
-#include "cachesim.cpp"
-
-// #include <iostream>
 #include <string>
 #include <algorithm>
+#include <cstring>
 using namespace std;
 struct test_config_t
 {
@@ -20,6 +19,8 @@ struct test_config_t
 
 int main()
 {
+
+    
     string inputData;
     getline(cin, inputData);
     istringstream iss(inputData);
@@ -45,10 +46,7 @@ int main()
 
     std::getline(iss, token, ',');
     useL2 = token == "true" ? true : false;
-
-
-
-
+    
     test_config_t config = {c1, b, s, c2, s, !prefetch, !useL2};
     cache_config_t l1Config = {
         .disabled = false,
@@ -123,7 +121,7 @@ int main()
     sim_finish(&stats);
 
     // Output relevant statistics for this configuration
-    cout << "hit ratio l1" << stats.hit_ratio_l1 <<  "hit ratio l2" << stats.read_hit_ratio_l2 << "AAT l1" << stats.avg_access_time_l1 
-    << "AAT l2" << stats.avg_access_time_l2 << endl;
+    cout << "hit ratio l1: " << stats.hit_ratio_l1 <<  " hit ratio l2: " << stats.read_hit_ratio_l2 << " AAT l1: " << stats.avg_access_time_l1 
+    << " AAT l2: " << stats.avg_access_time_l2 << endl;
     return 0;
 }

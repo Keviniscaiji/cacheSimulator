@@ -52,6 +52,8 @@ function submitForm1() {
         .catch(error => console.error('Error:', error));
 
 }
+
+
 function submitForm2() {
     var operation = document.getElementById("operation").value;
     var address = document.getElementById("address").value;
